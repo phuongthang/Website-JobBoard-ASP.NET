@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WorkITModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountAdministrator">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fullname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Url" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="AccountOrganization">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="150" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameOrganization" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Url" Type="nvarchar" MaxLength="200" />
+    <Property Name="Field" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="AccountPerson">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="150" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fullname" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Url" Type="nvarchar" MaxLength="200" />
+    <Property Name="Position" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Apply">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsernameO" Type="nvarchar" MaxLength="150" />
+    <Property Name="UsernameU" Type="nvarchar" MaxLength="150" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="IDJob" Type="bigint" />
+    <Property Name="ImgCV" Type="nvarchar" MaxLength="150" />
+    <Property Name="Status" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="150" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Avatar" Type="nvarchar" MaxLength="150" />
+    <Property Name="Date" Type="date" />
+    <Property Name="ContentBlog" Type="text" />
+    <Property Name="Status" Type="nvarchar" MaxLength="1" />
+    <Property Name="Main" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="IDBlog" />
+      <PropertyRef Name="IDComment" />
+    </Key>
+    <Property Name="IDBlog" Type="bigint" Nullable="false" />
+    <Property Name="IDComment" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="150" />
+    <Property Name="Comment" Type="text" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="CV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="150" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="ImgCV" Type="nvarchar" MaxLength="150" />
+    <Property Name="Position" Type="nvarchar" MaxLength="300" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="Experience" Type="text" />
+    <Property Name="Skill" Type="text" />
+    <Property Name="Pin" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="150" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="JobPosition" Type="nvarchar" MaxLength="200" />
+    <Property Name="Location" Type="nvarchar" MaxLength="200" />
+    <Property Name="Salary" Type="bigint" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="text" />
+    <Property Name="RequireSkill" Type="text" />
+    <Property Name="NumPeople" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" />
+    <Property Name="Main" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Languages" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Salary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Salary" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Apply_AccountOrganization">
+    <End Role="AccountOrganization" Type="Self.AccountOrganization" Multiplicity="0..1" />
+    <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountOrganization">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Apply">
+        <PropertyRef Name="UsernameO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apply_AccountPerson">
+    <End Role="AccountPerson" Type="Self.AccountPerson" Multiplicity="0..1" />
+    <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountPerson">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Apply">
+        <PropertyRef Name="UsernameU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apply_Job">
+    <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
+    <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Apply">
+        <PropertyRef Name="IDJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Blog">
+    <End Role="Blog" Type="Self.Blog" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="IDBlog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CV_AccountPerson">
+    <End Role="AccountPerson" Type="Self.AccountPerson" Multiplicity="0..1" />
+    <End Role="CV" Type="Self.CV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountPerson">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="CV">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_AccountOrganization">
+    <End Role="AccountOrganization" Type="Self.AccountOrganization" Multiplicity="0..1" />
+    <End Role="Job" Type="Self.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountOrganization">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WorkITModelStoreContainer">
+    <EntitySet Name="AccountAdministrator" EntityType="Self.AccountAdministrator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountOrganization" EntityType="Self.AccountOrganization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountPerson" EntityType="Self.AccountPerson" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Apply" EntityType="Self.Apply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CV" EntityType="Self.CV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Apply_AccountOrganization" Association="Self.FK_Apply_AccountOrganization">
+      <End Role="AccountOrganization" EntitySet="AccountOrganization" />
+      <End Role="Apply" EntitySet="Apply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apply_AccountPerson" Association="Self.FK_Apply_AccountPerson">
+      <End Role="AccountPerson" EntitySet="AccountPerson" />
+      <End Role="Apply" EntitySet="Apply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apply_Job" Association="Self.FK_Apply_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="Apply" EntitySet="Apply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Blog" Association="Self.FK_Comment_Blog">
+      <End Role="Blog" EntitySet="Blog" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CV_AccountPerson" Association="Self.FK_CV_AccountPerson">
+      <End Role="AccountPerson" EntitySet="AccountPerson" />
+      <End Role="CV" EntitySet="CV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_AccountOrganization" Association="Self.FK_Job_AccountOrganization">
+      <End Role="AccountOrganization" EntitySet="AccountOrganization" />
+      <End Role="Job" EntitySet="Job" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b8da51e2924248e4a646094e661f068a" Name="Diagram1">
+        <EntityTypeShape EntityType="WorkITModel.AccountAdministrator" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.AccountOrganization" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.AccountPerson" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.Apply" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.City" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.CV" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.Job" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.Language" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.Salary" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkITModel.sysdiagram" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="WorkITModel.FK_Apply_AccountOrganization" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkITModel.FK_Job_AccountOrganization" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkITModel.FK_Apply_AccountPerson" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkITModel.FK_CV_AccountPerson" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkITModel.FK_Apply_Job" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WorkITModel.Blog" Width="1.5" PointX="10.75" PointY="6.5" />
+        <EntityTypeShape EntityType="WorkITModel.Comment" Width="1.5" PointX="13" PointY="6.75" />
+        <AssociationConnector Association="WorkITModel.FK_Comment_Blog" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

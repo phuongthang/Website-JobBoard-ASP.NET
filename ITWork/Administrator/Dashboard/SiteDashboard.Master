@@ -1,0 +1,401 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteDashboard.master.cs" Inherits="ITWork.Administrator.Dashboard.SiteDashboard" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!-- Original URL: http://themedesigner.in/demo/admin-press/main/layout-logo-center.html
+    Date Downloaded: 11/30/2018 3:41:57 PM !-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../Template/assets/images/favicon.png" />
+    <title>Admin Press Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../Template/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../Template/assets/css/style.css" rel="stylesheet" />
+    <!-- You can change the theme colors from here -->
+    <link href="../Template/assets/css/colors/blue.css" id="theme" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="fix-header fix-sidebar card-no-border mini-sidebar">
+    <form id="form1" runat="server">
+         <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewbox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle> </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../Template/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../Template/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                         <!-- dark Logo text -->
+                         <img src="../Template/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <!-- Light Logo text -->    
+                         <img src="../Template/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <!-- ============================================================== -->
+                        <!-- Comment -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-view-grid"></i></a>
+     
+                        </li>
+                        
+                        <!-- ============================================================== -->
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <div class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter" /> <a class="srh-btn"><i class="ti-close"></i></a> </div>
+                        </li>
+                        
+                        <!-- ============================================================== -->
+                        <!-- Language -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-vn"></i></a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <asp:Image ID="imgAccount" runat="server" class="profile-pic" />
+                                </a>
+                            <div class="dropdown-menu dropdown-menu-right scale-up">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img">
+                                                <asp:Image ID="imgAccount1" runat="server" />
+                                                </div>
+                                            <div class="u-text">
+                                                <h4 style="margin-top:10px;margin-left:5px"><asp:Label ID="lbusername" runat="server" ></asp:Label></h4>
+                                                <asp:HyperLink ID="linkProfile" runat="server" class="btn btn-rounded btn-danger btn-sm" style="margin-top:5px">View Profile</asp:HyperLink>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><asp:LinkButton ID="linkProf" runat="server" OnCommand="linkProf_Command"><i class="ti-user"></i> My Profile</asp:LinkButton></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkLogout1" runat="server" OnCommand="LinkLogout1_Command"><i class="fa fa-power-off" style="margin-right:5px"></i>Logout</asp:LinkButton>
+                                    </li>
+                                 </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- User profile -->
+                <div class="user-profile">
+                    <!-- User profile image -->
+                    <div class="profile-img"> 
+                        <asp:Image ID="imgProfile" runat="server" alt="user" />
+                            <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+                    </div>
+                    <!-- User profile text-->
+                    <div class="profile-text"> 
+                            <h5><asp:Label ID="lbFullname" runat="server"></asp:Label></h5>
+                            <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="mdi mdi-settings"></i></a>
+                             <a href="#" class="" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
+                            <asp:LinkButton ID="LinkLogout2" runat="server" data-toggle="tooltip" title="Logout" OnCommand="LinkLogout2_Command"><i class="mdi mdi-power"></i></asp:LinkButton>
+
+                        <div class="dropdown-menu animated flipInY">
+                        <!-- text--> 
+                        <asp:LinkButton ID="linkProf2" runat="server" OnCommand="linkProf_Command" class="dropdown-item"><i class="ti-user"></i> My Profile</asp:LinkButton>
+                        <div class="dropdown-divider"></div>
+                        <!-- text-->  
+                            <asp:LinkButton ID="LinkLogout3" runat="server" class="dropdown-item" OnCommand="LinkLogout3_Command" ><i class="fa fa-power-off" style="margin-right:5px"></i>Logout</asp:LinkButton>
+                        <!-- text-->  
+                        </div>
+                    </div>
+                </div>
+                <!-- End User profile text-->
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                         <li class="nav-devider"></li>
+                        <asp:Panel ID="pnHome" runat="server">
+                            <li class="nav-small-cap"><h5 style="font-weight:bold;text-align:center;background:#1976D2;color:#ffffff;height:30px;line-height:30px">Home</h5></li>
+                            <li> 
+                            <a  href="Home.aspx" aria-expanded="false"><i class="ti-home"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Home</span></a>
+                            </li>
+                            <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-pin-alt"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Blog</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="fViewBlog.aspx">News</a></li>
+                                <li><a href="fCreateBlog.aspx">Create Blog</a></li>
+                            </ul>
+                        </li>
+                        </asp:Panel>
+                        <asp:Panel ID="pnAdministrators" runat="server">
+                            <li class="nav-small-cap"><h5 style="font-weight:bold;text-align:center;background:#1976D2;color:#ffffff;height:30px;line-height:30px">Administrators</h5></li>
+                        <li> 
+                            <a  href="fProfileAdmin.aspx" aria-expanded="false"><i class="ti-settings"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Profile</span></a>
+                        </li>
+
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-user"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Account</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="fAccountAdmin.aspx">Account Managers</a></li>
+                                <li><a href="../Account/fChangePasswordAdmin.aspx">Password Change</a></li>
+                                <li><asp:LinkButton ID="LinkLogout4" runat="server" OnCommand="LinkLogout4_Command" >Logout</asp:LinkButton></li>
+                            </ul>
+                        </li>
+                         
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-info-alt"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Approval</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="fApprovalJob.aspx">Job</a></li>
+                                <li><a href="fApprovalCV.aspx">CV</a></li>
+                                <li><a href="fApprovalPost.aspx">Post</a></li>
+                            </ul>
+                        </li>
+
+                        
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-wallet" style="margin-right:10px;color:#1976D2"></i><span class="hide-menu" style="font-weight:bold;color:#1976D2">Account Managers</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="fAccountOrganization.aspx">Account Organizations</a></li>
+                                <li><a href="fAccountPersonal.aspx">Account Personal</a></li>
+                            </ul>
+                        </li>
+                            <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-layout-grid2"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Manage Posts</span></a>
+                            <ul aria-expanded="false" class="collapse">
+    
+                                <li><a href="fListPostOverview.aspx">View Post</a></li>
+                            </ul>
+                        </li>
+                        </asp:Panel>
+                        
+                        <asp:Panel ID="pnOrganization" runat="server">
+                            
+                            <li class="nav-small-cap"><h5 style="font-weight:bold;text-align:center;background:#1976D2;color:#ffffff;height:30px;line-height:30px">Organization</h5></li>
+                            
+                            <li> 
+                            <a  href="fProfileOrganization.aspx" aria-expanded="false"><i class="ti-settings"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Profile</span></a>
+                            </li>
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-user"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Account</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="../Account/fChangePasswordUser.aspx">Password Change</a></li>
+                                <li><a href="../Account/fLoginUser.aspx">Logout</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a  href="fSearchPerson.aspx" aria-expanded="false"><i class="ti-search"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Personal Search</span></a>
+                        </li>
+                         <li> 
+                            <a  href="fCreateJob.aspx" aria-expanded="false"><i class="ti-pencil-alt"  style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Job Create</span></a>
+                        </li>
+                            <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-layout-grid2"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Manage Posts</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="fListJobOverview.aspx">View Job</a></li>
+                                <li><a href="fListPostOverview.aspx">View Post</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a  href="fViewApply.aspx" aria-expanded="false"><i class="ti-arrow-circle-down"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Confirm</span></a>
+                        </li>
+  
+                        </asp:Panel>
+                        
+                        <asp:Panel ID="pnPersonal" runat="server">
+                            <li class="nav-small-cap"><h5 style="font-weight:bold;text-align:center;background:#1976D2;color:#ffffff;height:50px;height:30px;line-height:30px">Personal</h5></li>
+                            <li> 
+                            <a  href="fProfilePerson.aspx" aria-expanded="false"><i class=" ti-settings"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Profile</span></a>
+                            </li>
+
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-user"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Account</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="../Account/fChangePasswordUser.aspx">Password Change</a></li>
+                                <li><a href="../Account/fLoginUser.aspx">Logout</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a  href="fSearchOrganization.aspx" aria-expanded="false"><i class="ti-search"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Organizations Search</span></a>
+                        </li>
+                            <asp:Panel ID="pnCreateCV" runat="server">
+                                <li> 
+                            <a  href="fCreateCV.aspx" aria-expanded="false"><i class="ti-pencil-alt"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Create CV</span></a>
+                            </li>
+                            </asp:Panel>
+                            
+                         
+                            <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-layout-grid2"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Manage Posts</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="fListCVOverview.aspx">View CV</a></li>
+                                <li><a href="fListPostOverview.aspx">View Post</a></li>
+                            </ul>
+                        </li>
+                            <li> 
+                            <a  href="fViewConfirm.aspx" aria-expanded="false"><i class="ti-arrow-circle-down"style="margin-right:10px;color:#1976D2"></i><span class="hide-menu"style="font-weight:bold;color:#1976D2">Confirm</span></a>
+                            </li>
+                        
+                        </asp:Panel>
+                        
+                        
+                         
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                    <asp:ContentPlaceHolder ID="content" runat="server">
+                    </asp:ContentPlaceHolder>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+   
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer">
+                © 2020 Admin Press Administrator by Phuong Thang
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    </form>
+</body>
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../Template/assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../Template/assets/plugins/bootstrap/js/popper.min.js"></script>
+
+    <script src="../Template/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../Template/assets/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="../Template/assets/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../Template/assets/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="../Template/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="../Template/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../Template/assets/js/custom.min.js"></script>
+    <asp:ContentPlaceHolder ID="foot" runat="server">
+            </asp:ContentPlaceHolder>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="../Template/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    
+</html>

@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WorkITModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AccountAdministrator">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fullname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AccountOrganization">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NameOrganization" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Field" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Applies" Relationship="Self.FK_Apply_AccountOrganization" FromRole="AccountOrganization" ToRole="Apply" />
+    <NavigationProperty Name="Jobs" Relationship="Self.FK_Job_AccountOrganization" FromRole="AccountOrganization" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="AccountPerson">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fullname" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Applies" Relationship="Self.FK_Apply_AccountPerson" FromRole="AccountPerson" ToRole="Apply" />
+    <NavigationProperty Name="CVs" Relationship="Self.FK_CV_AccountPerson" FromRole="AccountPerson" ToRole="CV" />
+  </EntityType>
+  <EntityType Name="Apply">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsernameO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="UsernameU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="IDJob" Type="Int64" />
+    <Property Name="ImgCV" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccountOrganization" Relationship="Self.FK_Apply_AccountOrganization" FromRole="Apply" ToRole="AccountOrganization" />
+    <NavigationProperty Name="AccountPerson" Relationship="Self.FK_Apply_AccountPerson" FromRole="Apply" ToRole="AccountPerson" />
+    <NavigationProperty Name="Job" Relationship="Self.FK_Apply_Job" FromRole="Apply" ToRole="Job" />
+    <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="0" />
+    <Property Name="ImgCV" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Skill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Pin" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccountPerson" Relationship="Self.FK_CV_AccountPerson" FromRole="CV" ToRole="AccountPerson" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="JobPosition" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Int64" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RequireSkill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumPeople" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Main" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccountOrganization" Relationship="Self.FK_Job_AccountOrganization" FromRole="Job" ToRole="AccountOrganization" />
+    <NavigationProperty Name="Applies" Relationship="Self.FK_Apply_Job" FromRole="Job" ToRole="Apply" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Languages" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Salary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Salary1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Apply_AccountOrganization">
+    <End Role="AccountOrganization" Type="Self.AccountOrganization" Multiplicity="0..1" />
+    <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountOrganization">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Apply">
+        <PropertyRef Name="UsernameO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_AccountOrganization">
+    <End Role="AccountOrganization" Type="Self.AccountOrganization" Multiplicity="0..1" />
+    <End Role="Job" Type="Self.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountOrganization">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apply_AccountPerson">
+    <End Role="AccountPerson" Type="Self.AccountPerson" Multiplicity="0..1" />
+    <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountPerson">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Apply">
+        <PropertyRef Name="UsernameU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CV_AccountPerson">
+    <End Role="AccountPerson" Type="Self.AccountPerson" Multiplicity="0..1" />
+    <End Role="CV" Type="Self.CV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountPerson">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="CV">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apply_Job">
+    <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
+    <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Apply">
+        <PropertyRef Name="IDJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WorkITEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountAdministrators" EntityType="Self.AccountAdministrator" />
+    <EntitySet Name="AccountOrganizations" EntityType="Self.AccountOrganization" />
+    <EntitySet Name="AccountPersons" EntityType="Self.AccountPerson" />
+    <EntitySet Name="Applies" EntityType="Self.Apply" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="CVs" EntityType="Self.CV" />
+    <EntitySet Name="Jobs" EntityType="Self.Job" />
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <EntitySet Name="Salaries" EntityType="Self.Salary" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Apply_AccountOrganization" Association="Self.FK_Apply_AccountOrganization">
+      <End Role="AccountOrganization" EntitySet="AccountOrganizations" />
+      <End Role="Apply" EntitySet="Applies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_AccountOrganization" Association="Self.FK_Job_AccountOrganization">
+      <End Role="AccountOrganization" EntitySet="AccountOrganizations" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apply_AccountPerson" Association="Self.FK_Apply_AccountPerson">
+      <End Role="AccountPerson" EntitySet="AccountPersons" />
+      <End Role="Apply" EntitySet="Applies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CV_AccountPerson" Association="Self.FK_CV_AccountPerson">
+      <End Role="AccountPerson" EntitySet="AccountPersons" />
+      <End Role="CV" EntitySet="CVs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apply_Job" Association="Self.FK_Apply_Job">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Apply" EntitySet="Applies" />
+    </AssociationSet>
+    <EntitySet Name="Blogs" EntityType="WorkITModel.Blog" />
+    <EntitySet Name="Comments" EntityType="WorkITModel.Comment" />
+    <AssociationSet Name="FK_Comment_Blog" Association="WorkITModel.FK_Comment_Blog">
+      <End Role="Blog" EntitySet="Blogs" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Avatar" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="ContentBlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Main" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Comments" Relationship="WorkITModel.FK_Comment_Blog" FromRole="Blog" ToRole="Comment" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="IDBlog" />
+      <PropertyRef Name="IDComment" />
+    </Key>
+    <Property Name="IDBlog" Type="Int64" Nullable="false" />
+    <Property Name="IDComment" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Blog" Relationship="WorkITModel.FK_Comment_Blog" FromRole="Comment" ToRole="Blog" />
+  </EntityType>
+  <Association Name="FK_Comment_Blog">
+    <End Type="WorkITModel.Blog" Role="Blog" Multiplicity="1" />
+    <End Type="WorkITModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="IDBlog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
